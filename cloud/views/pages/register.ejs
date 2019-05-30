@@ -1,0 +1,91 @@
+<% include ../parts/header %>
+    <div class="wrapper ">
+        <% include ../parts/sidebar %>
+        <div class="main-panel">
+          <!-- Navbar -->
+          <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+            <div class="container-fluid">
+              <div class="navbar-wrapper">
+              </div>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+              </button>
+            </div>
+          </nav>
+          <!-- End Navbar -->
+          <div class="content">
+            <div class="container-fluid">
+              <!-- your content here -->
+              <div class="row justify-content-md-center" style="margin-bottom:20px;">
+                <img src="/assets/img/logo.svg" alt="">
+              </div>
+              <div class="row justify-content-md-center">
+                  <div class="card col-md-6">
+                        <div class="card-header card-header-primary">
+                          <h4 class="card-title">Register</h4>
+                          <p class="card-category">Register for your BabyWatch account</p>
+                        </div>
+                        <div class="card-body">
+                            <form method="POST">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group bmd-form-group">
+                                                <label class="bmd-label-floating">Name</label>
+                                                <input type="text" class="form-control" name="name">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group bmd-form-group">
+                                                <label class="bmd-label-floating">Surname</label>
+                                                <input type="text" class="form-control" name="surname">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group bmd-form-group">
+                                                <label class="bmd-label-floating">E-mail</label>
+                                                <input type="email" class="form-control" name="email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group bmd-form-group">
+                                                <label class="bmd-label-floating">Username</label>
+                                                <input type="text" class="form-control" name="username">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group bmd-form-group">
+                                                <label class="bmd-label-floating">Phone</label>
+                                                <input type="phone" class="form-control" name="phone">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group bmd-form-group">
+                                                <label class="bmd-label-floating">Password</label>
+                                                <input type="password" class="form-control" name="password">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group bmd-form-group">
+                                                <label class="bmd-label-floating">Password Confirmation</label>
+                                                <input type="password" class="form-control" name="passwordConf">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary pull-right">REGISTER</button>
+                                    <div class="clearfix"></div>
+                                </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+<% include ../parts/footer %>
