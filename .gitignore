@@ -1,2 +1,3 @@
 cloud/node_modules
 cloud/.sass-cache
+node/babywatch/include/secrets.h
