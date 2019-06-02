@@ -50,6 +50,6 @@ router.post('/sendData',(req,res) => {
     }else{
         res.status(401).send('Unauthorized');
     }
-});
+}); //Adding data to the dataase from device
 
 module.exports = router;

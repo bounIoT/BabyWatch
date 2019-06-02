@@ -20,11 +20,6 @@ let nav = [
     url: '/dash/devices',
     icon: 'device_hub'
   },
-  // {
-  //   title: 'User',
-  //   url: '/dash/user',
-  //   icon: 'person'
-  // },
   {
     title: 'Logout',
     url: '/logout',
@@ -56,7 +51,7 @@ router.get('/',(req,res) => {
         });
       });
     });
-});
+}); //Dashboard page
 
 router.get('/data/:babyId', (req,res) => {
   models.data.find({babyId: req.params.babyId, timestamp: {$gte: new Date(Date.now() - 3600000)}}, (err,doc) => {
@@ -101,7 +96,7 @@ router.get('/data/:babyId', (req,res) => {
       res.send(response);
     }
   });
-});
+}); //Pushing data to the front-end
 
 router.get('/babies',(req,res) => {
     models.baby.find({user: req.session.username},(err,doc) => {
@@ -113,31 +108,30 @@ router.get('/babies',(req,res) => {
         babies: doc
       });
     });
-    
 });
 
 router.post('/babies',(req,res) => {
   if (
     req.body.name &&
     req.body.surname && req.body.birthdate && req.body.gender
-) {
-    var babyData = {
-    name: req.body.name,
-    birthDate: new Date(req.body.birthdate),
-    surname: req.body.surname,
-    gender: req.body.gender,
-    user: req.session.username
-    };
+  ) {
+      var babyData = {
+      name: req.body.name,
+      birthDate: new Date(req.body.birthdate),
+      surname: req.body.surname,
+      gender: req.body.gender,
+      user: req.session.username
+      };
 
-    models.baby.create(babyData, function (err, baby) {
-    if (err) {
-        return res.send(err);
-    } else {
-        return res.redirect('/dash/babies');
-    }
-    });
-}
-});
+      models.baby.create(babyData, function (err, baby) {
+        if (err) {
+            return res.send(err);
+        } else {
+            return res.redirect('/dash/babies');
+        }
+      });
+  }
+}); // Adding baby
 
 router.post('/babies/del',(req,res) => {
   models.baby.remove({_id : ObjectID(req.body.babyId)},(err,doc) => {
@@ -147,7 +141,7 @@ router.post('/babies/del',(req,res) => {
       res.send("OK");
     }
   });
-});
+}); //Removing baby
 
 router.get('/devices',(req,res) => {
   models.device.find({user: req.session.username},(err,doc) => {
@@ -169,32 +163,30 @@ router.get('/devices',(req,res) => {
       });
     });
   });
-  
 });
 
 router.post('/devices',(req,res) => {
-if (
-  req.body.deviceId && req.body.babyId
-) {
+  if (
+    req.body.deviceId && req.body.babyId
+  ) {
 
-  models.device.findOneAndUpdate(
-    { _id: ObjectID(req.body.deviceId) },
-    {user: req.session.username,
-      baby: req.body.babyId},
-    { runValidators: true },
-    function (err, doc) {
-        if (err) {
-          res.send(err);
-        } else {
-            res.redirect('/dash/devices');
-        }
-    }
-  );
-}
-});
+    models.device.findOneAndUpdate(
+      { _id: ObjectID(req.body.deviceId) },
+      {user: req.session.username,
+        baby: req.body.babyId},
+      { runValidators: true },
+      function (err, doc) {
+          if (err) {
+            res.send(err);
+          } else {
+              res.redirect('/dash/devices');
+          }
+      }
+    );
+  }
+}); // Adding device
 
 router.post('/devices/del',(req,res) => {
-
   models.device.findOneAndUpdate(
     { _id: ObjectID(req.body.deviceId) },
     {user: null, baby: null},
@@ -207,7 +199,7 @@ router.post('/devices/del',(req,res) => {
         }
     }
   );
-});
+}); // Removing device
 
 module.exports = router;
 

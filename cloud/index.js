@@ -1,25 +1,26 @@
-const express = require('express');
+const express = require('express'); // Web Framework
 const app = express();
 const bodyParser = require("body-parser");
-const MongoClient = require("mongodb").MongoClient;
-const mongoose = require("mongoose");
-const session = require("express-session");
-const cookieParser = require("cookie-parser");
-const MongoStore = require("connect-mongo")(session);
-const helmet = require('helmet');
-const CONFIG = require('./config.js');
-const url = require("url");
+const MongoClient = require("mongodb").MongoClient; // Database Client
+const mongoose = require("mongoose"); // Database Connector
+const session = require("express-session");  // Session Handler
+const cookieParser = require("cookie-parser"); // Cookie Parser
+const MongoStore = require("connect-mongo")(session); // Storing Sessions
+const helmet = require('helmet'); // Security plugin
+const CONFIG = require('./config.js'); // Config
+const url = require("url"); // Parsing URL
 const PORT = process.env.PORT || 5000;
 
-app.use(helmet());
+app.use(helmet()); // Security plugin
 
-mongoose.connect(CONFIG.mongo.uri, { useNewUrlParser: true });
+mongoose.connect(CONFIG.mongo.uri, { useNewUrlParser: true }); //Database Connection
+
 const models = {
   user: require("./models/user").user,
   baby: require("./models/baby").baby,
   device: require('./models/device').device,
   data: require("./models/data").data
-};
+}; //Database Schemas
 
 let nav = [
   {
@@ -37,10 +38,10 @@ let nav = [
     url: '/register',
     icon: 'person_add'
   }
-];
+]; //Defined Navigation
 
-app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser()); //Cookie Parser Middleware
+app.use(bodyParser.urlencoded({ extended: true })); //BodyParser Middleware
 app.use(bodyParser.json());
 
 app.use(
@@ -52,16 +53,17 @@ app.use(
         mongooseConnection: mongoose.connection
       })
     })
-  );
-app.use('/assets',express.static('public'));
+  ); //Session Middleware
+
+app.use('/assets',express.static('public')); //Handling assets URI
 
 app.use((req,res,next) => {
   req.args = {};
   req.args.url = req.originalUrl;
   next();
-});
+}); //Passing URL as a parameter to front-end
 
-var api = require("./routers/api");
+var api = require("./routers/api"); // API Router
 
 app.use(function (req, res, next) {
     if (
@@ -69,7 +71,6 @@ app.use(function (req, res, next) {
         req.url.includes("/login") ||
         req.url.includes("/api") ||
         req.url.includes("/assets") ||
-        req.url.includes("/semantic") ||
         req.url === "/favicon.ico" ||
         req.url === "/logout" ||
         req.url === "/register"
@@ -78,20 +79,22 @@ app.use(function (req, res, next) {
     } else {
         res.redirect("/login");
     }
-});
+}); // Excluding pages from session control
 
 
-var dash = require("./routers/dash");
+var dash = require("./routers/dash"); // Dash Router
 
  app.use("/api", api);
  app.use("/dash", dash);
 // app.use("/user", user);
 
-app.set("view engine", "ejs");
+app.set("view engine", "ejs"); //Defining EJS as viewing engine
 
 app.get("/", function (req, res) {
-    (req.session && req.session.username) ? res.redirect("/dash") : res.sendFile(__dirname + '/views/static/index.html');
-});
+    (req.session && req.session.username) ? res.redirect("/dash") : res.redirect("/login"); //Redirecting to dashboard if logged in
+}); 
+
+// Login & Register Pages
 
 app.get("/register", function (req, res) {
   res.render("pages/register", {
@@ -99,7 +102,7 @@ app.get("/register", function (req, res) {
     args: req.args,
     nav: nav
   });
-});
+}); 
 
 app.get("/login", function (req, res) {
   res.render("pages/login", {
@@ -130,7 +133,7 @@ app.post("/register", function (req, res) {
         }
         });
     }
-});
+}); //Registering user if neccessary fields given.
 
 app.post("/login", function (req, res) {
     if (req.body.email && req.body.password) {
@@ -164,7 +167,7 @@ app.post("/login", function (req, res) {
         })
       );
     }
-});
+}); // Logging user in
 
 app.get("/logout", function (req, res, next) {
     if (req.session) {
@@ -176,9 +179,8 @@ app.get("/logout", function (req, res, next) {
             }
         });
     }
-});
+}); // Logging user out
 
 app.listen(PORT, function () {
     console.log("magic happens on *:" + PORT);
-});
-  
+}); // Listening given port  

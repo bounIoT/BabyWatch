@@ -10,7 +10,7 @@
     "baby",
     "monitoring"
   ],
-  "author": "BounIOT G1 <Umut Baran Zorlu, Umut Barış Öztunç, Mehmet Çalım>",
+  "author": "BounIOT BabyWatch <Umut Baran Zorlu, Umut Barış Öztunç, Mehmet Çalım>",
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^3.0.6",

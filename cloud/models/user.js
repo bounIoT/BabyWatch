@@ -30,7 +30,7 @@ UserSchema.pre("save", function (next) {
       }
       user.password = hash;
       next();
-    });
+    }); //Decrypting user password before saving
 });
 
 var user = mongoose.model("user", UserSchema);
@@ -50,7 +50,7 @@ user.authenticate = function (email, password, callback) {
         } else {
           return callback();
         }
-      });
+      }); //Comparing crypted pass with database
     });
   };
   
