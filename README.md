@@ -16,7 +16,7 @@ We are using IoT for detecting baby’s behavior and sending it to the cloud whi
 
 Our solution will make parents feel safer than normally they are and make baby monitoring less stressful and less time consuming thing by letting parents know that their baby is asleep even if they are not watching on camera.
 
-## IoT Architecture
+## IoT Architecture
 
 ![IoT Architecture](assets/iot_architecture.jpg)
 
