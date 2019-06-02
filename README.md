@@ -24,3 +24,21 @@ BabyWatch is a parental control device for working parents who are concerned wit
 ## Circuit Diagram
 
 ![BabyWatch Circuit Diagram](assets/BabyWatch_circuit.png)
+
+## Credits
+
+### Front End
+* [Material Dashboard](https://github.com/creativetimofficial/material-dashboard) by [Creative Tim](https://github.com/creativetimofficial/)
+
+### Back End
+* [MongoDB](https://github.com/mongodb/mongo)
+* [Mongoose](https://github.com/Automattic/mongoose) by [Auttomatic](https://github.com/Automattic/)
+* [Express.JS](https://github.com/expressjs/express)
+* [Bcrypt](https://github.com/kelektiv/node.bcrypt.js)
+* [Body Parser](https://github.com/expressjs/body-parser)
+* [Cookie Parser](https://github.com/expressjs/cookie-parser)
+* [Connect Mongo](https://github.com/jdesboeufs/connect-mongo)
+* [EJS](https://github.com/tj/ejs)
+* [Express Session](https://github.com/expressjs/session)
+* [Helmet](https://github.com/helmetjs/helmet)
+* [URL](https://github.com/defunctzombie/node-url)
