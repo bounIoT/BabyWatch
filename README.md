@@ -4,18 +4,6 @@ BabyWatch is a parental control device for working parents who are concerned wit
 
 ![Splash](assets/splash.jpeg)
 
-## Problem
-
-People are really concerned with their babies when they are not around them. They usually use cameras to monitor them, but monitoring constantly takes so much time.
-
-Parents who are working spends too much time on monitoring their babies. This leads decrease in quality of their work and anxiety.
-
-## Solution
-
-We are using IoT for detecting baby’s behavior and sending it to the cloud which enables us to create insights.
-
-Our solution will make parents feel safer than normally they are and make baby monitoring less stressful and less time consuming thing by letting parents know that their baby is asleep even if they are not watching on camera.
-
 ## IoT Architecture
 
 ![IoT Architecture](assets/iot_architecture.jpg)
