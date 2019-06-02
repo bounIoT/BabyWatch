@@ -22,16 +22,16 @@ Our solution will make parents feel safer than normally they are and make baby m
 
 ## Components
 
-| Component | Name | Action |
-| --------- | ---- | ------ |
-| Sound Sensor | KY-038 | Integration |
-| PIR Motion Sensor | HC-SR501 | Integration |
-| Wireless Connectivity | WIFI | Integration(on Arduino Yùn) |
-| Embedded HW Platform | Arduino Yùn | Integration |
-| Embedded HW App | Arduino Ide | Development(We set input and output pins. In addtition, we wrote some functions to handle data stream.) |
-| Cloud Platform | Digital Ocean | Integration |
-| Cloud App SW | Node.JS | Development(We implemented backend side of Cloud with Node.JS) |
-| Web Client SW | Material Dashboard with Javascript and HTML | Development(We used Material Dashboard and Bootstrap Library)s |
+| Component             | Name                                        | Action                                                         |
+| --------------------- | ------------------------------------------- | -------------------------------------------------------------- |
+| Sound Sensor          | KY-038                                      | Integration                                                    |
+| PIR Motion Sensor     | HC-SR501                                    | Integration                                                    |
+| Wireless Connectivity | WIFI                                        | Integration(on Arduino Yùn)                                    |
+| Embedded HW Platform  | Arduino Yùn                                 | Integration                                                    |
+| Embedded HW App       | Arduino Ide                                 | Development                                                    |
+| Cloud Platform        | Digital Ocean                               | Integration                                                    |
+| Cloud App SW          | Node.JS                                     | Development(We implemented backend side of Cloud with Node.JS) |
+| Web Client SW         | Material Dashboard with Javascript and HTML | Development(We used Material Dashboard and Bootstrap Library)s |
 
 ## Circuit Diagram
 
