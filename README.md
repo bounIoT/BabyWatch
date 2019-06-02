@@ -25,7 +25,7 @@ BabyWatch is a parental control device for working parents who are concerned wit
 
 ![BabyWatch Circuit Diagram](assets/BabyWatch_circuit.png)
 
-## Credits
+## Credits
 
 ### Front End
 * [Material Dashboard](https://github.com/creativetimofficial/material-dashboard) by [Creative Tim](https://github.com/creativetimofficial/)
