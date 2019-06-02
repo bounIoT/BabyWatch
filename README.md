@@ -32,7 +32,7 @@ BabyWatch is a parental control device for working parents who are concerned wit
 
 ### Back End
 * [MongoDB](https://github.com/mongodb/mongo)
-* [Mongoose](https://github.com/Automattic/mongoose) by [Auttomatic](https://github.com/Automattic/)
+* [Mongoose](https://github.com/Automattic/mongoose)
 * [Express.JS](https://github.com/expressjs/express)
 * [Bcrypt](https://github.com/kelektiv/node.bcrypt.js)
 * [Body Parser](https://github.com/expressjs/body-parser)
