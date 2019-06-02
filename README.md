@@ -23,7 +23,7 @@ Our solution will make parents feel safer than normally they are and make baby m
 ## Components
 
 | Component             | Name                                        | Action                                                         |
-| --------------------- | ------------------------------------------- | -------------------------------------------------------------- |
+|-----------------------|---------------------------------------------|----------------------------------------------------------------|
 | Sound Sensor          | KY-038                                      | Integration                                                    |
 | PIR Motion Sensor     | HC-SR501                                    | Integration                                                    |
 | Wireless Connectivity | WIFI                                        | Integration(on Arduino Yùn)                                    |
