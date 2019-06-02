@@ -2,11 +2,15 @@
 
 BabyWatch is a parental control device for working parents who are concerned with sleeping habits of their babies.
 
-![Splash](assets/splash.jpeg)
+![Splash](https://user-images.githubusercontent.com/25671417/58762252-fffd9000-8556-11e9-91e2-f0560f77b7f1.jpeg)
 
 ## IoT Architecture
 
-![IoT Architecture](assets/iot_architecture.jpg)
+![IoT Architecture](https://user-images.githubusercontent.com/25671417/58762250-ff64f980-8556-11e9-9f03-d4280f46abc6.jpg)
+
+## Solution
+
+![Solution](https://user-images.githubusercontent.com/25671417/58762251-ff64f980-8556-11e9-89fd-54a8566a3908.png)
 
 ## Components
 
@@ -23,7 +27,7 @@ BabyWatch is a parental control device for working parents who are concerned wit
 
 ## Circuit Diagram
 
-![BabyWatch Circuit Diagram](assets/BabyWatch_circuit.png)
+![BabyWatch Circuit](https://user-images.githubusercontent.com/25671417/58762249-ff64f980-8556-11e9-9a0a-a9a07e546dee.png)
 
 ## Credits
 
